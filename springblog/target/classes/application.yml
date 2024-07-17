@@ -1,0 +1,9 @@
+server:
+  port: 18081
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/blogtest
+    username: root
+    password: 123456
