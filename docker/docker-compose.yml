@@ -1,0 +1,29 @@
+version: '1.0'
+services:
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    container_name: mysql
+    port:
+    - "3306:3306"
+    networks:
+    - hm-net 
+  openjdk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openjdk
+    port:
+    - "18081:18081"
+    networks:
+    - hm-net 
+    depends_on:
+      - mysql
+  networks:
+    hm-net:
+      name: net
+  
+
+
+
